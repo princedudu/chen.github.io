@@ -1,0 +1,131 @@
+body {
+    font-family: 'Arial', sans-serif;
+    /* Seaside background image from Unsplash (calm beach scene) */
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3') no-repeat center center fixed;
+    background-size: cover;
+    /* Ensures the image covers the entire background */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.75);
+    /* Reduced opacity for more background visibility */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
+    /* Soft sky blue glow */
+    text-align: center;
+    border: 4px solid #FEC84C;
+    /* Expedia yellow border */
+}
+
+h1 {
+    color: #202843;
+    /* Expedia navy blue */
+    font-size: 2.8em;
+    text-shadow: 2px 2px 4px #FEC84C;
+    /* Yellow shadow */
+    margin-bottom: 10px;
+}
+
+p {
+    color: #FEC84C;
+    /* Expedia yellow */
+    font-size: 1.3em;
+    text-shadow: 1px 1px 2px #202843;
+    /* Navy blue shadow */
+}
+
+.question {
+    margin: 25px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #B0E0E6, #E0FFFF);
+    /* Powder blue to light cyan */
+    border-radius: 15px;
+    text-align: left;
+    border: 3px dashed #FEC84C;
+    /* Yellow dashed border */
+    box-shadow: 0 0 15px rgba(176, 224, 230, 0.5);
+    /* Powder blue glow */
+}
+
+.question h3 {
+    margin-bottom: 15px;
+    color: #202843;
+    /* Navy blue */
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px #FEC84C;
+    /* Yellow shadow */
+}
+
+.options label {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    background: #FEC84C;
+    /* Expedia yellow */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #202843;
+    /* Navy blue text */
+    font-weight: bold;
+}
+
+.options label:hover {
+    background: #FFD700;
+    /* Brighter yellow (gold) */
+    transform: scale(1.03);
+    box-shadow: 0 0 10px #87CEEB;
+    /* Sky blue glow */
+}
+
+button {
+    background: linear-gradient(90deg, #202843, #FEC84C);
+    /* Navy blue to yellow */
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border: 2px solid #87CEEB;
+    /* Sky blue border */
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #FEC84C, #202843);
+    /* Reversed gradient */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FEC84C;
+    /* Yellow glow */
+}
+
+#results {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #E0FFFF, #B0E0E6);
+    /* Light cyan to powder blue */
+    border-radius: 15px;
+    color: #202843;
+    /* Navy blue text */
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px #FEC84C;
+    /* Yellow shadow */
+    border: 3px solid #FEC84C;
+    /* Yellow border */
+}
+
+/* Radio button styling */
+input[type="radio"] {
+    accent-color: #FEC84C;
+    /* Expedia yellow */
+    margin-right: 8px;
+    transform: scale(1.2);
+}
