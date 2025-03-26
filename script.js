@@ -1,4 +1,4 @@
-// Trivia data (unchanged)
+// Trivia data (Static for temperory use)
 const travelTrivia = [
     {'question': 'Which city is home to the Eiffel Tower?', 'options': ['A) London', 'B) Paris', 'C) Berlin', 'D) Rome'], 'correctAnswer': 'B'},
     {'question': 'Which city is known for its Hollywood film industry?', 'options': ['A) New York', 'B) Los Angeles', 'C) Miami', 'D) Chicago'], 'correctAnswer': 'B'},
@@ -21,8 +21,8 @@ const travelTrivia = [
 let currentQuestionIndex = 0;
 let score = 0;
 let userAnswers = [];
-let timer; // Timer variable to track the countdown
-const TIME_LIMIT = 10; // 10 seconds per question
+let timer;
+const TIME_LIMIT = 10;
 
 function loadQuestion() {
     const container = document.getElementById("question-container");
@@ -41,13 +41,13 @@ function loadQuestion() {
             </div>
         </div>
     `;
-    startTimer(); // Start the timer when the question loads
+    startTimer();
 }
 
 function startTimer() {
     let timeLeft = TIME_LIMIT;
     const timerDisplay = document.getElementById("timer");
-    clearInterval(timer); // Clear any existing timer
+    clearInterval(timer);
 
     timer = setInterval(() => {
         timeLeft--;
@@ -63,7 +63,7 @@ function startTimer() {
 function handleTimeOut() {
     const currentQuestion = travelTrivia[currentQuestionIndex];
     userAnswers.push({ question: currentQuestion.question, answer: "run out of time" });
-    endGame(false); // End the game when time runs out
+    endGame("timeout"); // Pass "timeout" as the reason
 }
 
 function checkAnswer() {
@@ -73,7 +73,7 @@ function checkAnswer() {
         return;
     }
 
-    clearInterval(timer); // Stop the timer when an answer is submitted
+    clearInterval(timer);
     const userAnswer = selected.value;
     const currentQuestion = travelTrivia[currentQuestionIndex];
     userAnswers.push({ question: currentQuestion.question, answer: userAnswer });
@@ -84,20 +84,20 @@ function checkAnswer() {
         if (currentQuestionIndex < travelTrivia.length) {
             loadQuestion();
         } else {
-            endGame(true);
+            endGame("completed");
         }
     } else {
-        endGame(false);
+        endGame("wrong"); // Pass "wrong" as the reason
     }
 }
 
-async function endGame(completedAll) {
+async function endGame(reason) {
     const totalQuestions = travelTrivia.length;
     const resultsDiv = document.getElementById("results");
     const submitBtn = document.getElementById("submit-btn");
     submitBtn.style.display = "none";
 
-    if (completedAll) {
+    if (reason === "completed") {
         resultsDiv.innerHTML = `
             <h2>Congratulations!</h2>
             <p>You answered all ${totalQuestions} questions correctly!</p>
@@ -106,9 +106,15 @@ async function endGame(completedAll) {
         `;
     } else {
         const percentage = (score / totalQuestions) * 100;
+        let message;
+        if (reason === "timeout") {
+            message = "You ran out of time!";
+        } else if (reason === "wrong") {
+            message = "You got a wrong answer!";
+        }
         resultsDiv.innerHTML = `
             <h2>Game Over</h2>
-            <p>You ${score === 0 ? "ran out of time or " : ""}got a wrong answer!</p>
+            <p>${message}</p>
             <p>Your score: ${score}/${totalQuestions} (${percentage.toFixed(1)}%)</p>
             ${score > 0 ? "<p>Not bad! Keep exploring!</p>" : "<p>Better luck next time!</p>"}
         `;
