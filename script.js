@@ -1,6 +1,6 @@
 // Trivia data (unchanged)
 const travelTrivia = [
-    { question: "What is the capital city of Brazil?", options: ["A) Rio de Janeiro", "B) São Paulo", "C) Brasília", "D) Salvador"], correctAnswer: "C" },
+    { question: "What is the capital city of Brazil? c", options: ["A) Rio de Janeiro", "B) São Paulo", "C) Brasília", "D) Salvador"], correctAnswer: "C" },
     { question: "Which country has the most deserts?", options: ["A) Australia", "B) Antarctica", "C) Egypt", "D) Chile"], correctAnswer: "B" },
     { question: "What is the tallest mountain in the world?", options: ["A) K2", "B) Kangchenjunga", "C) Everest", "D) Lhotse"], correctAnswer: "C" },
     { question: "Which city is known as the 'City of Love'?", options: ["A) Venice", "B) Paris", "C) Rome", "D) Florence"], correctAnswer: "B" },
