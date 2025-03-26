@@ -82,7 +82,7 @@ async function endGame(completedAll) {
 
     // Send to server
     try {
-        const response = await fetch('http://localhost:3000/submit', {
+        const response = await fetch('https://trivia-backend-esmo.onrender.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(responseData)
