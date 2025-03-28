@@ -22,7 +22,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let userAnswers = [];
 let timer;
-const TIME_LIMIT = 10;
+const TIME_LIMIT = 8;
 
 function loadQuestion() {
     const container = document.getElementById("question-container");
