@@ -53,6 +53,13 @@ function startTimer() {
         timeLeft--;
         timerDisplay.textContent = `Time remaining: ${timeLeft} seconds`;
 
+        // Add "warning" class when 3 seconds or less remain
+        if (timeLeft <= 3) {
+            timerDisplay.classList.add("warning");
+        } else {
+            timerDisplay.classList.remove("warning"); // Remove when above 3 seconds
+        }
+
         if (timeLeft <= 0) {
             clearInterval(timer);
             handleTimeOut();
