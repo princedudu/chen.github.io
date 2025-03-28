@@ -133,3 +133,10 @@ input[type="radio"] {
     transform: scale(1.2);
 }
 
+#timer {
+    font-size: 1.8em; /* Adjust this value to make it larger or smaller */
+    color: #1c6181; /* Matches the question h3 color (sky blue) for consistency */
+    font-weight: bold; /* Optional: makes it stand out more */
+    margin-bottom: 15px; /* Adds some spacing below the timer */
+}
+
