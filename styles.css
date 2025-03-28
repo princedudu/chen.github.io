@@ -140,3 +140,15 @@ input[type="radio"] {
     margin-bottom: 15px; /* Adds some spacing below the timer */
 }
 
+/* Warning class for last 3 seconds */
+#timer.warning {
+    color: #FF0000; /* Bright red */
+    animation: blink 0.5s infinite; /* Blinking effect */
+}
+
+/* Blinking animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
