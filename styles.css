@@ -134,16 +134,16 @@ input[type="radio"] {
 }
 
 #timer {
-    font-size: 1.0em; /* Adjust this value to make it larger or smaller */
+    font-size: 1.6em; /* Adjust this value to make it larger or smaller */
     color: #1c6181; /* Matches the question h3 color (sky blue) for consistency */
     font-weight: bold; /* Optional: makes it stand out more */
     margin-bottom: 15px; /* Adds some spacing below the timer */
 }
 
-/* Warning class for last 3 seconds */
+/* Warning styles with higher specificity or !important */
 #timer.warning {
-    color: #FF0000; /* Bright red */
-    animation: blink 0.5s infinite; /* Blinking effect */
+    color: #FF0000 !important; /* Red with !important to override */
+    animation: blink 0.5s infinite !important; /* Animation with !important */
 }
 
 /* Blinking animation */
